@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   StyledSearchPageHeaderContainer,
   StyledSearchHeader,
@@ -22,7 +22,12 @@ import { Tooltip, IconButton } from "@mui/material";
 import SearchInput from "./SearchInput";
 import Avatar from "@mui/material/Avatar";
 import SearchResults from "./SearchResults";
+import useSearch from "../hooks/useSearch";
+import mocks from "../mocks";
 const SearchPage = () => {
+  const { search } = useLocation();
+  const searchTerm = search?.split("?")[1];
+  const { data } = useSearch(searchTerm);
   return (
     <StyledSearchPageHeaderContainer>
       <StyledSearchHeader>
@@ -97,9 +102,9 @@ const SearchPage = () => {
           </StyledOptions>
         </StyledHeaderRight>
       </StyledSearchHeader>
-      {true && <SearchResults />}
+      {!!data && <SearchResults data={data} />}
     </StyledSearchPageHeaderContainer>
   );
-};
+};;
 
 export default SearchPage;
