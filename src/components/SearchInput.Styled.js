@@ -2,7 +2,7 @@ import { styled } from "@mui/system";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 
-const StyledInputWrapper = styled("div")`
+const StyledInputWrapper = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ const StyledInputWrapper = styled("div")`
   border-radius: 999px;
   input {
     flex: 1;
-    background-color: ${({ theme }) => theme.body.darkColor};
+    background-color: ${({ theme }) => theme?.body?.darkColor};
     border: none;
     padding: 16px 24px;
     font-size: medium;

@@ -26,20 +26,22 @@ const Home = () => {
           <Tooltip title='Google apps'>
             <IconButton>
               <AppsIcon
-                sx={{ fontSize: "1.5rem", color: "rgba(255,255,255,0.87)" }}
+                data-testid='app-icon'
+                sx={{ fontSize: '1.5rem', color: 'rgba(255,255,255,0.87)' }}
               />
             </IconButton>
           </Tooltip>
           <Tooltip title='Google Account'>
             <Avatar
+              data-testid='header-avatar'
               sx={{
-                width: "30px",
-                height: "30px",
-                borderRadius: "50%",
-                backgroundColor: "#8ab4f8",
-                color: "white",
-                cursor: "pointer",
-                marginRight: "8px",
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                backgroundColor: '#8ab4f8',
+                color: 'white',
+                cursor: 'pointer',
+                marginRight: '8px',
               }}
             >
               JP
