@@ -19,13 +19,14 @@ const SearchInput = ({ showButtons = false }) => {
   return (
     <form onSubmit={handleSearch}>
       <StyledInputWrapper>
-        <StyledSearchIcon />
+        <StyledSearchIcon aria-labelledby='search' data-testid='search-icon' />
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          data-testid='search-input'
         />
         <Tooltip title='Search by voice'>
-          <StyledMicIcon />
+          <StyledMicIcon aria-label='voiceover' data-testid='mic-icon' />
         </Tooltip>
       </StyledInputWrapper>
       <StyledButtonContainer showButtons={showButtons}>
